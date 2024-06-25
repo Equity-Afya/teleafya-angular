@@ -1,0 +1,29 @@
+<div class="container">
+  <img src="assets/logo.svg" alt="login" />
+  <div class="header">
+    <h2>Teleafya</h2>
+  </div>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input
+        type="text"
+        id="email"
+        formControlName="email"
+        placeholder="Enter Email"
+      />
+    </div>
+    <div>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Password"
+      />
+    </div>
+    <button type="submit">Login</button>
+    <div class="link-container">
+      <a routerLink="/register">Register</a>
+      <a routerLink="/forgot-password">Forgot Password</a>
+    </div>
+  </form>
+</div>

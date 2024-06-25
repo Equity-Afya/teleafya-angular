@@ -1,0 +1,41 @@
+<div class="register-container">
+  <div class="header">
+    <h2>Register</h2>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div>
+      <div>
+        <input
+          type="email"
+          id="password"
+          name="password"
+          placeholder="Enter Email"
+          formControlName="password"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          id="enterPassword"
+          name="enterPassword"
+          placeholder="Enter Password"
+          formControlName="EnterPassword"
+          required
+        />
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm Password"
+          formControlName="confirmPassword"
+          required
+        />
+      </div>
+      <button type="submit" [disabled]="!registerForm.valid">Sign Up</button>
+      <div class="link-container">
+        <a routerLink="/login">Login</a>
+      </div>
+    </div>
+  </form>
+</div>
