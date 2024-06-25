@@ -1,11 +1,11 @@
 .header {
-  color: #a39b27;
+  color: #c00100;
   padding: 10px 20px;
   text-align: center;
   font-size: 20px;
 }
 
-.header h2 {
+.header h1 {
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -81,6 +81,17 @@ input:hover {
 input::placeholder {
   font-family: inherit;
   font-size: inherit;
+}
+
+button {
+  background-color: #c00100;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 button:hover {

@@ -1,47 +1,30 @@
-.register-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  margin: auto;
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+mat-card {
+  background-color: #f5f5f5;
   border-radius: 8px;
-  background-color: #ffffff;
-  margin-top: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  margin: 0 auto; /* Add this line to center the card horizontally */
 }
 
-.header h2 {
-  font-size: 24px;
-  font-weight: bold;
+h1 {
   text-align: center;
-  margin: 0 0 20px;
+  margin-top: 20px;
+  font-weight: 600px;
   color: #c00100;
 }
-
-div {
-  margin-bottom: 10px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  padding: 8px;
-  font-size: 16px;
+mat-form-field {
   width: 100%;
-  margin-bottom: 15px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 8px;
 }
 
-button[disabled] {
-  background-color: #ccc;
+button {
+  margin-top: 20px;
+}
+mat-form-field {
+  width: 100%;
+  margin-bottom: 8px;
 }
 
-.link-container a {
-  margin: 0 10px;
+button {
+  margin-top: 20px;
 }

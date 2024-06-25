@@ -1,41 +1,82 @@
-<div class="register-container">
-  <div class="header">
-    <h2>Register</h2>
-  </div>
-  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-    <div>
-      <div>
-        <input
-          type="email"
-          id="password"
-          name="password"
-          placeholder="Enter Email"
-          formControlName="password"
-          required
-        />
-      </div>
-      <div>
-        <input
-          type="password"
-          id="enterPassword"
-          name="enterPassword"
-          placeholder="Enter Password"
-          formControlName="EnterPassword"
-          required
-        />
-        <input
-          type="password"
-          id="confirmPassword"
-          name="confirmPassword"
-          placeholder="Confirm Password"
-          formControlName="confirmPassword"
-          required
-        />
-      </div>
-      <button type="submit" [disabled]="!registerForm.valid">Sign Up</button>
-      <div class="link-container">
-        <a routerLink="/login">Login</a>
-      </div>
-    </div>
+<mat-card appearance="outlined">
+  <h1>Registration</h1>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>ID Number</mat-label>
+      <input matInput formControlName="idNumber" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        formControlName="password"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hidePassword = !hidePassword"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hidePassword"
+      >
+        <mat-icon>{{
+          hidePassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Confirm Password</mat-label>
+      <input
+        matInput
+        [type]="hideConfirmPassword ? 'password' : 'text'"
+        formControlName="confirmPassword"
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="hideConfirmPassword = !hideConfirmPassword"
+        [attr.aria-label]="'Hide confirm password'"
+        [attr.aria-pressed]="hideConfirmPassword"
+      >
+        <mat-icon>{{
+          hideConfirmPassword ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Phone Number</mat-label>
+      <input matInput formControlName="phoneNumber" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Gender</mat-label>
+      <mat-select formControlName="gender">
+        <mat-option value="male">Male</mat-option>
+        <mat-option value="female">Female</mat-option>
+        <mat-option value="other">Other</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Date of Birth</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dateOfBirth" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Register</button>
   </form>
-</div>
+</mat-card>
