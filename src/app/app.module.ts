@@ -15,9 +15,14 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RegisterComponent } from './register/register.component';
-
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    RegisterComponent,
+    ResetPasswordComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
